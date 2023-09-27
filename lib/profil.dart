@@ -28,12 +28,19 @@ class _ProfilState extends State<Profil> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Profil Saya'),
+        title: const Text(
+          'Profil Saya',
+          style: TextStyle(
+            color: Colors.blue, // Ubah warna teks judul
+          ),
+        ),
+        backgroundColor: Colors.black, // Ubah warna latar belakang AppBar
       ),
       body: Center(
         child: _buildProfilCard(),
       ),
       drawer: const SideMenu(),
+      backgroundColor: Colors.black, // Ubah warna latar belakang body
     );
   }
 
@@ -54,51 +61,88 @@ class _ProfilState extends State<Profil> {
           SizedBox(height: 20),
           Card(
             elevation: 4.0,
+            color: Colors.blue, // Ubah warna latar belakang Card
             child: Padding(
               padding: const EdgeInsets.all(16.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   ListTile(
-                    title: const Text('NIM'),
+                    title: const Text(
+                      'NIM',
+                      style: TextStyle(color: Colors.white), // Ubah warna teks judul
+                    ),
                     subtitle: Text(
                       profil[0],
-                      style: TextStyle(fontSize: 18.0),
+                      style: TextStyle(
+                        fontSize: 18.0,
+                        color: Colors.white, // Ubah warna teks subtitle
+                      ),
                     ),
                   ),
                   ListTile(
-                    title: const Text('Nama'),
+                    title: const Text(
+                      'Nama',
+                      style: TextStyle(color: Colors.white),
+                    ),
                     subtitle: Text(
                       profil[1],
-                      style: TextStyle(fontSize: 18.0),
+                      style: TextStyle(
+                        fontSize: 18.0,
+                        color: Colors.white,
+                      ),
                     ),
                   ),
                   ListTile(
-                    title: const Text('No HP'),
+                    title: const Text(
+                      'No HP',
+                      style: TextStyle(color: Colors.white),
+                    ),
                     subtitle: Text(
                       profil[2],
-                      style: TextStyle(fontSize: 18.0),
+                      style: TextStyle(
+                        fontSize: 18.0,
+                        color: Colors.white,
+                      ),
                     ),
                   ),
                   ListTile(
-                    title: const Text('E-mail'),
+                    title: const Text(
+                      'E-mail',
+                      style: TextStyle(color: Colors.white),
+                    ),
                     subtitle: Text(
                       profil[3],
-                      style: TextStyle(fontSize: 18.0),
+                      style: TextStyle(
+                        fontSize: 18.0,
+                        color: Colors.white,
+                      ),
                     ),
                   ),
                   ListTile(
-                    title: const Text('Fakultas'),
+                    title: const Text(
+                      'Fakultas',
+                      style: TextStyle(color: Colors.white),
+                    ),
                     subtitle: Text(
                       profil[4],
-                      style: TextStyle(fontSize: 18.0),
+                      style: TextStyle(
+                        fontSize: 18.0,
+                        color: Colors.white,
+                      ),
                     ),
                   ),
                   ListTile(
-                    title: const Text('Jurusan'),
+                    title: const Text(
+                      'Jurusan',
+                      style: TextStyle(color: Colors.white),
+                    ),
                     subtitle: Text(
                       profil[5],
-                      style: TextStyle(fontSize: 18.0),
+                      style: TextStyle(
+                        fontSize: 18.0,
+                        color: Colors.white,
+                      ),
                     ),
                   ),
                 ],

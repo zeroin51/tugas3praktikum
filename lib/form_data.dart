@@ -44,8 +44,18 @@ class _FormDataState extends State<FormData> {
       decoration: InputDecoration(
         labelText: label,
         contentPadding: EdgeInsets.symmetric(
-            vertical: 10, horizontal: 15), // Tambahkan padding
+          vertical: 10,
+          horizontal: 15,
+        ),
+        enabledBorder: OutlineInputBorder(
+          borderSide: BorderSide(color: Colors.blue), // Ubah warna garis tepi
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderSide: BorderSide(color: Colors.blue),
+        ),
+        labelStyle: TextStyle(color: Colors.blue), // Ubah warna label
       ),
+      style: TextStyle(color: Colors.white), // Ubah warna teks
       controller: controller,
       keyboardType: isEmail
           ? TextInputType.emailAddress
@@ -100,10 +110,10 @@ class _FormDataState extends State<FormData> {
         title: const Text('Form Profil'),
         automaticallyImplyLeading: false,
       ),
+      backgroundColor: Colors.black, // Ubah warna latar belakang
       body: Padding(
         padding: const EdgeInsets.all(10),
         child: ListView(
-          // Tambahkan ListView
           children: [
             _textbox('NIM', _nimController),
             _textbox('Nama', _namaController),
@@ -111,9 +121,8 @@ class _FormDataState extends State<FormData> {
             _textbox('E-mail', _emailController, isEmail: true),
             _textbox('Fakultas', _fakultasController),
             _textbox('Jurusan', _jurusanController),
-            SizedBox(height: 20), // Tambahkan jarak antara teks box dan tombol
+            SizedBox(height: 20),
             TextButton(
-              // Ganti ElevatedButton menjadi TextButton
               onPressed: () {
                 if (_nimController.text.isEmpty ||
                     _namaController.text.isEmpty) {
@@ -121,11 +130,9 @@ class _FormDataState extends State<FormData> {
                     SnackBar(
                       content: Text(
                         'NIM dan Nama harus diisi.',
-                        style:
-                            TextStyle(color: Colors.white), // Ubah warna teks
+                        style: TextStyle(color: Colors.white),
                       ),
-                      backgroundColor:
-                          Colors.red, // Ubah warna latar belakang pesan
+                      backgroundColor: Colors.red,
                     ),
                   );
                 } else if (_emailController.text.isNotEmpty &&
@@ -166,8 +173,8 @@ class _FormDataState extends State<FormData> {
                 }
               },
               style: ButtonStyle(
-                // Tambahkan styling untuk TextButton
-                backgroundColor: MaterialStateProperty.all<Color>(Colors.blue),
+                backgroundColor:
+                    MaterialStateProperty.all<Color>(Colors.blue),
               ),
               child: Text(
                 'Simpan',
